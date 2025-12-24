@@ -980,6 +980,7 @@ d3d10 = Module("d3d10")
 d3d10.addFunctions([
     StdFunction(HRESULT, "D3D10CreateDevice", [(ObjPointer(IDXGIAdapter), "pAdapter"), (D3D10_DRIVER_TYPE, "DriverType"), (HMODULE, "Software"), (D3D10_CREATE_DEVICE_FLAG, "Flags"), (UINT, "SDKVersion"), Out(Pointer(ObjPointer(ID3D10Device)), "ppDevice")]),
     StdFunction(HRESULT, "D3D10CreateDeviceAndSwapChain", [(ObjPointer(IDXGIAdapter), "pAdapter"), (D3D10_DRIVER_TYPE, "DriverType"), (HMODULE, "Software"), (D3D10_CREATE_DEVICE_FLAG, "Flags"), (UINT, "SDKVersion"), (Pointer(DXGI_SWAP_CHAIN_DESC), "pSwapChainDesc"), Out(Pointer(ObjPointer(IDXGISwapChain)), "ppSwapChain"), Out(Pointer(ObjPointer(ID3D10Device)), "ppDevice")]),
+    StdFunction(HRESULT, "D3D10ReflectShader", [(Blob(Const(Void), "BytecodeLength"), "pShaderBytecode"), (SIZE_T, "BytecodeLength"), Out(OpaquePointer(Opaque("ID3D10ShaderReflection *")), "ppReflector")]),
 ])
 
 d3d10.addInterfaces([
